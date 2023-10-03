@@ -3,7 +3,7 @@ def  is_point_in_box(x, y, xmin, ymin, xmax, ymax):
         if y>ymin and y<ymax:
             return True
         else:
-            False
+            return False
     else:
-        False
+        return False
     
