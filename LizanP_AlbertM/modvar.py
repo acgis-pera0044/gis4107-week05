@@ -10,6 +10,3 @@ def mod_myvar(var):
         else:
             var -= 2           # Condition 4
     return var
-
-
-mod_myvar(4)
