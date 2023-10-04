@@ -12,4 +12,4 @@ def mod_myvar(var):
     return var
 
 
-print(mod_myvar(8))
+mod_myvar(4)
