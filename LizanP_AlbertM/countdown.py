@@ -5,8 +5,9 @@ def get_countdown_as_text_using_for(start_value=10):
     """
     countdown=[]
     for i in range(start_value,-1,-1):
-        countdown.append(i)
-    return countdown
+        countdown.append(str(i))
+        countdown_string=' '.join(countdown)
+    return countdown_string
 
 def get_countdown_as_text_using_while(start_value=10):
     """Given a start_value, default is 10, return a space delimited string
@@ -14,7 +15,8 @@ def get_countdown_as_text_using_while(start_value=10):
     """
     countdown=[]
     while(start_value>=0):
-       countdown.append(start_value)
+       countdown.append(str(start_value))
        start_value-=1
-    return countdown
+       countdown_string=' '.join(countdown)
+    return countdown_string
 
