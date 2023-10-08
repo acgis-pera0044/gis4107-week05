@@ -1,23 +1,13 @@
-# seqmod.py
-
-def mod_sequence(seq, skip_index=None, truncate_index=None):
-    """
-    Rebuild the sequence based on provided skip and truncate indices.
-
-    Parameters:
-    seq: The input sequence.
-    skip_index: Index to skip in the sequence. 
-    truncate_index: Index to truncate the sequence from. 
-
-    Return modified sequence.
-    """
-
-    seq_list = list(seq)  
-
-    if truncate_index is not None and truncate_index < len(seq_list):
-        seq_list = seq_list[:truncate_index]
-
-    if skip_index is not None and skip_index < len(seq_list):
-        seq_list.pop(skip_index)
-
-    return seq_list
+def mod_sequence(seq, skip_index = None, truncate_index = None):
+    position_index = 0
+    final_result = ""
+    for element in seq:
+        if position_index == skip_index: 
+            if position_index == truncate_index:
+                break
+            position_index += 1
+            continue
+        if position_index == truncate_index: break
+        position_index += 1
+        final_result += str(element)
+    return final_result

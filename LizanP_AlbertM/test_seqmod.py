@@ -1,78 +1,46 @@
-import seqmod  
+import seqmod as sqm
 
-def test_mod_sequence1():
-    seq = ['A', 'B', 'C', 'D']
-    skip_index=None
-    truncate_index=None
-    expection=['A', 'B', 'C', 'D']
-    actual=seqmod.mod_sequence(seq, skip_index, truncate_index)
-    assert expection==actual
+def test_mod_sequence_1():
+    expected = "ABCD"
+    actual = sqm.mod_sequence("ABCD")
+    assert expected == actual
 
-def test_mod_sequence2():
-    seq = ['A', 'B', 'C', 'D']
-    skip_index=0
-    truncate_index=None
-    expection=['B', 'C', 'D']
-    actual=seqmod.mod_sequence(seq, skip_index, truncate_index)
-    assert expection==actual
+def test_mod_sequence_2():
+    expected = "BCD"
+    actual = sqm.mod_sequence("ABCD", 0)
+    assert expected == actual
 
-def test_mod_sequence3():
-    seq = ['A', 'B', 'C', 'D']
-    skip_index=1
-    truncate_index=None
-    expection=['A', 'C', 'D']
-    actual=seqmod.mod_sequence(seq, skip_index, truncate_index)
-    assert expection==actual
+def test_mod_sequence_3():
+    expected = "ACD"
+    actual = sqm.mod_sequence("ABCD", 1)
+    assert expected == actual
 
-def test_mod_sequence4():
-    seq = ['A', 'B', 'C', 'D']
-    skip_index=1
-    truncate_index=2
-    expection=['A']
-    actual=seqmod.mod_sequence(seq, skip_index, truncate_index)
-    assert expection==actual
+def test_mod_sequence_4():
+    expected = "A"
+    actual = sqm.mod_sequence("ABCD", 1, 2)
+    assert expected == actual
 
-def test_mod_sequence5():
-    seq = ['A', 'B', 'C', 'D']
-    skip_index=2
-    truncate_index=2
-    expection=['A', 'B']
-    actual=seqmod.mod_sequence(seq, skip_index, truncate_index)
-    assert expection==actual
+def test_mod_sequence_5():
+    expected = "AB"
+    actual = sqm.mod_sequence("ABCD", 2, 2)
+    assert expected == actual
 
-def test_mod_sequence6():
-    seq = ['A', 'B', 'C', 'D']
-    skip_index=3
-    truncate_index=2
-    expection=['A', 'B']
-    actual=seqmod.mod_sequence(seq, skip_index, truncate_index)
-    assert expection==actual
+def test_mod_sequence_6():
+    expected = "AB"
+    actual = sqm.mod_sequence("ABCD", 3, 2)
+    assert expected == actual
 
-def test_mod_sequence7():
-    seq = ['A', 'B', 'C', 'D']
-    skip_index=4
-    truncate_index=None
-    expection=['A', 'B', 'C', 'D']
-    actual=seqmod.mod_sequence(seq, skip_index, truncate_index)
-    assert expection==actual
+def test_mod_sequence_7():
+    expected = "ABCD"
+    actual = sqm.mod_sequence("ABCD", 4)
+    assert expected == actual
 
-def test_mod_sequence8():
-    seq = ['A', 'B', 'C', 'D']
-    skip_index=None
-    truncate_index=4
-    expection=['A', 'B', 'C', 'D']
-    actual=seqmod.mod_sequence(seq, skip_index, truncate_index)
-    assert expection==actual
+def test_mod_sequence_8():
+    expected = "ABCD"
+    actual = sqm.mod_sequence("ABCD", truncate_index=4)
+    assert expected == actual
 
-def test_mod_sequence9():
-    seq = ['A', 'B', 'C', 'D']
-    skip_index=1
-    truncate_index=4
-    expection=['A', 'C', 'D']
-    actual=seqmod.mod_sequence(seq, skip_index, truncate_index)
-    assert expection==actual
-
-
-
-
-
+def test_mod_sequence_9():
+    expected = "ACD"
+    actual = sqm.mod_sequence("ABCD", 1, 4)
+    assert expected == actual
